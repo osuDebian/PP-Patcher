@@ -1,4 +1,5 @@
 import datetime
+from objects.config import Config
 import pymysql
 from pymysql.cursors import Cursor
 
@@ -16,8 +17,14 @@ title_card: str = '''
 cur: Cursor = None
 conn: pymysql.Connect = None
 
-progressPage = 76
+progressPage = 388
 TotalWorksCount = 0
+
+progressPages = []
+for i in range(Config["Threads"]):
+    progressPages.append(progressPage * (i + 1))
+
+processlist = []
 
 def logging(*val):
     now = datetime.datetime.now()

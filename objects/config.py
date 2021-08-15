@@ -9,7 +9,8 @@ DefaultConfig = {
     "MysqlPw": "CHANGE THIS",
     "MysqlDb": "DEBIAN",
     "Debug": False,
-    "MaximumGetScoresCount": 50
+    "MaximumGetScoresCount": 50,
+    "Threads": 3
 }
 
 class JsonFile:
